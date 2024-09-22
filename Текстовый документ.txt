@@ -1,0 +1,61 @@
+интернет магазин
+
+User --< Order >-- OrderItem >-- Product >-- Category
+              |
+             Payment
+
+1. Пользователь (User)
+    ID (Primary Key)
+    Имя (First Name)
+    Фамилия (Last Name)
+    Email (Email)
+    Пароль (Password)
+    Телефон (Phone)
+    Адрес (Address)
+
+2. Товар (Product)
+    ID (Primary Key)
+    Название (Name)
+    Описание (Description)
+    Цена (Price)
+    Количество на складе (Stock Quantity)
+    Категория ID (Category ID - Foreign Key)
+    Изображение (Image URL)
+
+3. Категория (Category)
+    ID (Primary Key)
+    Название (Name)
+    Описание (Description)
+
+4. Заказ (Order)
+    ID (Primary Key)
+    Дата заказа (Order Date)
+    Пользователь ID (User ID - Foreign Key)
+    Статус (Status)
+    Общая сумма (Total Amount)
+
+5. Элемент заказа (OrderItem)
+    ID (Primary Key)
+    Заказ ID (Order ID - Foreign Key)
+    Товар ID (Product ID - Foreign Key)
+    Количество (Quantity)
+    Цена на момент покупки (Price at Purchase Time)
+
+6. Оплата (Payment)
+    ID (Primary Key)
+    Заказ ID (Order ID - Foreign Key)
+    Дата платежа (Payment Date)
+    Сумма (Amount)
+    Способ оплаты (Payment Method)
+    Статус платежа (Payment Status)
+
+
+ Пользователь - Заказ  - Один пользователь может иметь множество заказов
+
+Заказ - Элемент заказа - Один заказ может включать множество элементов заказа, но каждый элемент заказа принадлежит одному заказу
+
+ Товар - Элемент заказа - Один товар может присутствовать во множестве элементов заказа, но каждый элемент заказа связан только с одним товаром
+
+Заказ - Оплата - Один заказ может иметь одну или несколько оплат, в зависимости от модели оплаты
+
+Категория - Товар - Одна категория может иметь множество товаров
