@@ -97,7 +97,6 @@ class Product(
         update()
     }
 
-
     fun shortInfo(): String {
         return "Product(name='$name', price=$price, availableBalance=$availableBalance)"
     }
