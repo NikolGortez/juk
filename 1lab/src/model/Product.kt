@@ -10,7 +10,7 @@ class Product(
     private var reserveBalance: Int,
     private var categoryId: Int?,
     private var imageUrls: List<String>
-) : TimeTrackable() {
+) : TimeTrackable()  {
     private var availableBalance = stockBalance - reserveBalance
 
     constructor(id: Int, name: String, price: Double, stockBalance: Int): this(id, name, null, price, null, stockBalance, 0, null, listOf())
